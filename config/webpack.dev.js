@@ -16,7 +16,8 @@ module.exports = webpackMerge(commonConfig, {
 
     devServer: {
         historyApiFallback: true,
-        stats: 'minimal'
+        stats: 'minimal',
+        hot: true
     },
 
     plugins: [
@@ -28,6 +29,8 @@ module.exports = webpackMerge(commonConfig, {
             }
         }),
 
-        new webpack.NamedModulesPlugin()
+        new webpack.NamedModulesPlugin(),
+
+        new webpack.HotModuleReplacementPlugin()
     ]
 });
